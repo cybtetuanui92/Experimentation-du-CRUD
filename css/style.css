@@ -1,0 +1,114 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+
+/* Style pour enlever les marqueurs des éléments de liste */
+li {
+    list-style-type: none;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+/* style H1 détail.php*/
+h1 {
+    text-align: center;
+}
+
+/* Style de la carte */
+div {
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 10px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Style des titres */
+h2, h3, h4 {
+    color: #c20000;
+}
+
+/* Style de l'image */
+img {
+    width: 30%;
+    height: auto;
+    border-radius: 8px;
+    margin-top: 10px;
+}
+
+/* Style du texte */
+p {
+    color: #666;
+    margin-top: 10px;
+    margin-bottom: 15px;
+}
+
+/* Style des liens */
+a {
+    text-decoration: none;
+    background-color: bisque;
+    border: #666 1px solid;
+    border-radius: 8px;
+    padding: 5px;
+    margin-top: 10px;
+}
+
+/* Style de la séparation */
+hr {
+    border: 0;
+    height: 1px;
+    background: #ddd;
+    margin: 15px 0;
+}
+
+/* Style du formulaire */
+.form-example {
+    margin-bottom: 15px;
+}
+
+/* Style des labels */
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+/* Style des champs de saisie */
+input {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    box-sizing: border-box;
+}
+
+/* Style du bouton de soumission */
+input[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-top: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+/* Style du bouton de soumission au survol */
+input[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+
+/* Style responsive */
+@media only screen and (max-width: 600px) {
+    div {
+        margin: 5px;
+        padding: 15px;
+    }
+}
