@@ -4,7 +4,7 @@
     $host = 'localhost'; 
     $dbname = 'cars_db';
     $user = 'root';
-    $password = 'je_suis_1_Dev';
+    $password = '**********';
 
     try {
         $pdo = new PDO("mysql:host=$host;dbname=$dbname", $user, $password);
