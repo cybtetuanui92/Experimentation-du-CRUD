@@ -3,7 +3,7 @@
 
     $host = 'localhost'; 
     $dbname = 'cars_db';
-    $user = 'root';
+    $user = '*********';
     $password = '**********';
 
     try {
