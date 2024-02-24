@@ -1,52 +1,33 @@
 <?php
-    session_start();
     require_once 'header.php';
 
+    $host = 'localhost'; 
+    $dbname = 'cars_db';
+    $user = 'root';
+    $password = 'je_suis_1_Dev';
 
+    try {
+        $pdo = new PDO("mysql:host=$host;dbname=$dbname", $user, $password);
+        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        echo "Connexion réussie à la base de données<hr>";
+    } catch(PDOException $e) {
+        echo "Erreur de connexion : " . $e->getMessage();
+    };
 
-    // ! création d'une base de donnée (ICI, un tableau "$cars" de tableaux de voitures "$car")
-    // * utilisation de $_SESSION['cars'], pour persister ma data pendant la manipulation CRUD
-    $_SESSION['cars'] = [
-        ["id" => "1", 
-        "model" => "VOLVO", 
-        "vendu" => "150", 
-        "stock" => "620",
-        "info" => "Lorem ipsum dolor sit amet consectetur, adipisicing elit. 
-                    Facilis eveniet dolorum ea illum et facere nihil ratione excepturi temporibus 
-                    sint adipisci, nulla alias fugiat dolore omnis magnam! Nihil, quibusdam aperiam.", 
-        "image" => "https://upload.wikimedia.org/wikipedia/commons/3/3c/Volvo_Trucks_Logo.png" ],
+    try {
+        $requete = 'SELECT * FROM car';
+        $stmt = $pdo->query($requete);
+        // ! STOCK VARIABLE DATABASE ($carsDb)
+        $carsDb = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    } catch (PDOException $e) {
+        echo "Erreur lors de la récupération des données : " . $e->getMessage();
+    };
 
-        ["id" => "2", 
-        "model" => "BMW", 
-        "vendu" => "50", 
-        "stock" => "520", 
-        "info" => "Lorem ipsum dolor sit amet consectetur, adipisicing elit. 
-                    Facilis eveniet dolorum ea illum et facere nihil ratione excepturi temporibus 
-                    sint adipisci, nulla alias fugiat dolore omnis magnam! Nihil, quibusdam aperiam.",
-        "image" => "https://upload.wikimedia.org/wikipedia/commons/4/44/BMW.svg" ],
-
-        ["id" => "3", 
-        "model" => "SAAB", 
-        "vendu" => "250", 
-        "stock" => "420", 
-        "info" => "Lorem ipsum dolor sit amet consectetur, adipisicing elit. 
-                    Facilis eveniet dolorum ea illum et facere nihil ratione excepturi temporibus 
-                    sint adipisci, nulla alias fugiat dolore omnis magnam! Nihil, quibusdam aperiam.",
-        "image" => "https://cdn.freebiesupply.com/logos/large/2x/saab-2-logo-png-transparent.png" ],
-        
-        ["id" => "4", 
-        "model" => "MERCEDES", 
-        "vendu" => "350", 
-        "stock" => "320", 
-        "info" => "Lorem ipsum dolor sit amet consectetur, adipisicing elit. 
-                    Facilis eveniet dolorum ea illum et facere nihil ratione excepturi temporibus 
-                    sint adipisci, nulla alias fugiat dolore omnis magnam! Nihil, quibusdam aperiam.",
-        "image" => "https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Mercedes-Logo.svg/1200px-Mercedes-Logo.svg.png" ]
-    ];
-
-    echo '
-        <h1>---- Mise à Jour Effective ----</h1>
-        <hr>
-    ';
+    // ! RECEPTION DATA OK
+    // var_dump($carsDb);
+    // echo '
+    //     <h1>---- Mise à Jour Effective ----</h1>
+    //     <hr>
+    // ';
 
 ?>
