@@ -1,9 +1,12 @@
 <?php
-    session_start();
     require_once 'header.php';
+    require_once 'data.php';
 
+    
     $urlId = $_GET['id'];
-    foreach($_SESSION['cars'] as $car) {
+    $tab = $carsDb;
+
+    foreach($tab as $car) {
         $idCor = $car['id'];
         if ($urlId == $idCor) {
             $upModel = $car['model'];
@@ -40,6 +43,8 @@
                     </div>
                 </form>
             ";
+
+            
 
         }
     };

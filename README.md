@@ -8,3 +8,11 @@ Créez une fonction salutation qui prend en paramètre un nom et affiche "Bonjou
 
 Définissez une fonction division qui prend deux paramètres et renvoie le résultat de la division. 
     -Si le dénominateur est zéro, la fonction doit renvoyer "zero n'est pas divisible"
+
+
+
+
+STOP- 23/02 
+
+gérer la partie image avec fonction UPLOAD
+gérer la logique de direction de l'adresse de stockage des assets 
